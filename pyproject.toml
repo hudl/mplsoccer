@@ -41,6 +41,9 @@ dependencies = ['matplotlib >= 3.8',
                 'seaborn',
 				]
 
+[project.optional-dependencies]
+video = ['imageio-ffmpeg']
+
 [project.urls]
 Documentation = "https://mplsoccer.readthedocs.io"
 Issues = "https://github.com/andrewRowlinson/mplsoccer/issues"
@@ -73,6 +76,7 @@ docs = ['adjustText',
 ]
 dev = ['grayskull',
        'hatch',
+       'imageio-ffmpeg',
        'jupyterlab',
        'pylint',
        'pytest',
