@@ -83,6 +83,7 @@ sphinx_gallery_conf = {
 									   '../../examples/sonars',
 									   '../../examples/tutorials',
                                        '../../examples/statsbomb',
+                                       '../../examples/tracking',
                                        '../../examples/pitch_setup', ])}
 
 
