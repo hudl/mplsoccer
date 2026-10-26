@@ -12,7 +12,7 @@ import pandas as pd
 from matplotlib import animation
 from matplotlib import pyplot as plt
 
-from mplsoccer import Pitch
+from mplsoccer import Pitch, save_animation
 
 ##############################################################################
 # Load the data
@@ -125,13 +125,20 @@ def animate(i):
     return ball, away, home
 
 
-# call the animator, animate so 25 frames per second
-anim = animation.FuncAnimation(fig, animate, frames=len(df_ball), interval=50, blit=True)
+# call the animator, animate so 25 frames per second (an interval of 40 milliseconds)
+anim = animation.FuncAnimation(fig, animate, frames=len(df_ball), interval=40, blit=True)
 plt.show()
 
-# note that its hard to get the ffmpeg requirements right.
-# I installed from conda-forge: see the environment.yml file in the docs folder
-# how to save animation - commented out for example
-# anim.save('example.mp4', dpi=150, fps=25,
-#          extra_args=['-vcodec', 'libx264'],
-#          savefig_kwargs={'pad_inches':0, 'facecolor':'#457E29'})
+##############################################################################
+# Save the animation
+#
+# You can save the animation as a video with ``save_animation``.
+# The file suffix sets the format, e.g. .mp4, .webm, .gif, or .webp.
+# Videos need ffmpeg. If you do not have ffmpeg installed, install the
+# bundled version with ``pip install "mplsoccer[video]"``.
+# The .gif and .webp formats do not need ffmpeg, but they are slower to save
+# and make larger files. The saves are commented out for this example.
+
+# save_animation(anim, 'example.mp4', fps=25, dpi=100)
+# save_animation(anim, 'example.webm', fps=25, dpi=100)
+# save_animation(anim, 'example.gif', fps=25, dpi=50)

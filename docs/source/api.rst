@@ -14,3 +14,4 @@ API
    mplsoccer.quiver
    mplsoccer.linecollection
    mplsoccer.grid
+   mplsoccer.animation
